@@ -101,18 +101,18 @@ function drawGame() {
 
 //Создание и установка анимации персонажа
 function createRed(loader, res) {
-  //Загружаем персонажа
+	//Загружаем персонажа
 	charRed = new PIXI.spine.Spine(res.charRed.spineData);
 	charRed.skeleton.setToSetupPose();
 	charRed.update(0);
-  //Будем обновлять автоматически, 
-  //так как оригинальная анимация слишком быстрая
+	//Будем обновлять автоматически, 
+	//так как оригинальная анимация слишком быстрая
 	charRed.autoUpdate = false;
 	
 	let charCage = new PIXI.Container();
 	charCage.addChild(charRed);
 	
-  //Распологаем персонажа в контейнере по центру
+	//Распологаем персонажа в контейнере по центру
 	let localRect = charRed.getLocalBounds();
 	charRed.position.set(-localRect.x, -localRect.y);
 	
@@ -121,18 +121,18 @@ function createRed(loader, res) {
 	charCage.position.set(80, 280);
 	charRed.state.setAnimation(0, 'red_idle_loop', true)
 
-  //Запускаем обработку анимации
+	//Запускаем обработку анимации
 	app.ticker.add(animRed);
 }
 
 let redLastFrame = 0;
 function animRed() {
-  let nowFrame = performance.now();
-  //Для плавной анимации используем разницу между 
-  //новым и последним кадром
-  let frameTime = (nowFrame - redLastFrame)/1000;
-  redLastFrame = nowFrame;
-  charRed.update(frameTime);
+	let nowFrame = performance.now();
+	//Для плавной анимации используем разницу между 
+	//новым и последним кадром
+	let frameTime = (nowFrame - redLastFrame)/1000;
+	redLastFrame = nowFrame;
+	charRed.update(frameTime);
 }
 
 let darkness;
@@ -350,7 +350,7 @@ function startGame(loader, res) {
 		});
 
 	}
-  else { //Если проигрыш
+	else { //Если проигрыш
 		isWin = false;
 		winSymbol = randomInt(0, 4);
 		let winCount = 0; //Количество победных символов
