@@ -118,7 +118,7 @@ function createRed(loader, res) {
 	charRed.state.setAnimation(0, 'red_idle_loop', true)
 
 	app.ticker.add(function() {
-		charRed.update(0.05);
+		charRed.update(0.04);
 	});
 }
 
