@@ -15,7 +15,6 @@
 			}
 			body {
 				background: black;
-				font-family:"DRAguSansBlack";
 			}
 			canvas {
 				position: absolute;
@@ -25,6 +24,9 @@
 				left: 50%;
 				transform: translate(-50%, -50%);
 			}
+			#text {
+				font-family:"DRAguSansBlack";
+			}
 		</style>
 		<script src="pixi.min.js"></script>
 		<script src="pixi-spine.js"></script>
@@ -32,6 +34,7 @@
 
 	</head>
 	<body>
+	<span id="text"></span>
 
 	</body>
 </html>
